@@ -1,0 +1,7 @@
+client/node_modules/
+client/debug.log
+server/node_modules/
+server/config/production.json
+server/config/default.json
+server/package-lock.json
+
