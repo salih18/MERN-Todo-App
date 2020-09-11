@@ -14,6 +14,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Online Deployment of this project is available at [Todo App](https://tv2z-app.herokuapp.com/).
 
+You can use below credentials to test pagination and search functions of the app. The database is populated by fakerjs library.
+
+```
+email: john@gmail.com
+password: 123456
+```
+
 ### Getting Started
 
 To get started you can simply clone the repo and install the dependencies in the root folder
