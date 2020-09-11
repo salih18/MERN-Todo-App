@@ -37,14 +37,7 @@ const title = [
 ];
 
 const TodoList = () => {
-  const {
-    todos,
-    loading,
-    getTodos,
-    deleteTodo,
-    getTodo,
-    toggleCompleteTodo
-  } = useTodo();
+  const { todos, loading, getTodos, deleteTodo, getTodo, toggleCompleteTodo } = useTodo();
 
   const { filtered, isActive, searchTerm, setSearch } = useSearch();
   const {
@@ -114,11 +107,7 @@ const TodoList = () => {
         break;
     }
   };
-  return loading ? (
-    <div className="position-absolute" style={{ top: '50%', left: '50%' }}>
-      <Spinner animation="grow" />
-    </div>
-  ) : (
+  return (
     <>
       <Modal
         isOpen={modal.isOpen}
