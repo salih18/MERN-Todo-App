@@ -1,0 +1,50 @@
+.todo-list-table-pagination .page-link {
+  background-color: #6c757d;
+  color: white;
+  padding: 0.7rem 1.25rem;
+  transition: all 0.25s ease-in;
+}
+
+.todo-list-table-pagination .page-link:hover {
+  z-index: 2;
+  color: #000;
+  font-family: 700;
+  text-decoration: none;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+.todo-list-table-pagination .page-item.active .page-linkh {
+  z-index: 3;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.todo-list-table-pagination.pagination {
+  background: transparent;
+}
+
+/* Responsive Pagination
+  ==================================== */
+@media all and (max-width: 750px) {
+  .todo-list-table-pagination {
+    display: flex;
+    flex-flow: wrap;
+  }
+
+  .todo-list-table-pagination .page-item:first-child {
+    display: none;
+  }
+
+  .todo-list-table-pagination .page-item {
+    padding: 2px;
+  }
+
+  .todo-list-table-pagination .page-link {
+    padding: 5px 10px;
+    text-align: center;
+  }
+  .todo-list-table-pagination .page-item:last-child {
+    display: none;
+  }
+}
