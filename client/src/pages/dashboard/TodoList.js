@@ -68,7 +68,7 @@ const TodoList = () => {
 
   //Modal Handlers
 
-  const handleShow = (type, id) => async(e) => {
+  const handleShow = (type, id) => async (e) => {
     e.preventDefault();
     if (type === 'add') {
       setModal({
@@ -125,12 +125,17 @@ const TodoList = () => {
         className="float-right mb-2"
         id="user-register-button"
       />
-      <FlexTable
-        data={pageOfItems}
-        titleData={title}
-        iconClick={(e, icon, id) => handleClick(e, icon, id)}
-        tableId={'todo-list-flex-table'}
-      />
+      {todos.length === 0 ? (
+        <h2 className='m-5 lead'> You don't have any todo. Click the button to add a todo! </h2>
+      ) : (
+        <FlexTable
+          data={pageOfItems}
+          titleData={title}
+          iconClick={(e, icon, id) => handleClick(e, icon, id)}
+          tableId={'todo-list-flex-table'}
+        />
+      )}
+
       <Pagination
         id={'todo-list-table-pagination'}
         items={isActive ? filtered : todos}
