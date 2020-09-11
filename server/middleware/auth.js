@@ -15,7 +15,7 @@ module.exports = async function (req, res, next) {
       if (error) {
         res.status(401).json({ msg: "Token is not valid" });
       } else {
-        req.user = decoded.user;
+        req.user = decoded.user; // decoded.user  equals user's id
         next();
       }
     });

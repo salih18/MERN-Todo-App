@@ -7,6 +7,21 @@ const Todo = require("../../models/Todo");
 const User = require("../../models/User");
 const Tag = require("../../models/Tag");
 
+// @route    GET api/todos
+// @desc     Get all todos
+// @access   Private
+router.get("/", auth, async (req, res) => {
+  try {
+    const todos = await Todo.find({
+      user: req.user.id,
+    }).sort({ date: -1 });
+    res.json(todos);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
 // @route    POST api/todos
 // @desc     Create a todo
 // @access   Private
@@ -29,12 +44,19 @@ router.post(
       const user = await User.findById(req.user.id).select("-password");
       const tag = await Tag.findById(req.body.tagId);
 
-      if (!tag) {
-        return res.status(400).json({ errors: [{ msg: "Invalid Tag Name" }] });
+      let createdTag = {};
+      if (tag._id.toString() === "5f5689a2d096a9b777ea4124") {
+        const newTag = new Tag({
+          name: req.body.tag,
+        });
+        createdTag = await newTag.save();
       }
       const newTodo = new Todo({
         name: user.name,
-        tags: [tag],
+        tags:
+          tag._id.toString() === "5f5689a2d096a9b777ea4124"
+            ? [createdTag]
+            : [tag],
         text: req.body.text,
         user: req.user.id,
       });
@@ -70,9 +92,12 @@ router.put(
       const todo = await Todo.findById(req.params.id);
       const tag = await Tag.findById(req.body.tagId);
 
-
-      if (!tag) {
-        return res.status(400).json({ errors: [{ msg: "Invalid Tag Name" }] });
+      let createdTag = {};
+      if (tag._id.toString() === "5f5689a2d096a9b777ea4124") {
+        const newTag = new Tag({
+          name: req.body.tag,
+        });
+        createdTag = await newTag.save();
       }
 
       // Check for ObjectId format and todo
@@ -85,10 +110,13 @@ router.put(
         return res.status(401).json({ msg: "User not authorized" });
       }
 
-      // Check if the todo has already been completed
+      // Update the todo
       if (todo) {
         todo.text = req.body.text;
-        todo.tags = [tag];
+        todo.tags =
+          tag._id.toString() === "5f5689a2d096a9b777ea4124"
+            ? [createdTag]
+            : [tag];
       }
 
       await todo.save();
@@ -100,21 +128,6 @@ router.put(
     }
   }
 );
-
-// @route    GET api/todos
-// @desc     Get all todos
-// @access   Private
-router.get("/", auth, async (req, res) => {
-  try {
-    const todos = await Todo.find({
-      user: req.user.id,
-    }).sort({ date: -1 });
-    res.json(todos);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server Error");
-  }
-});
 
 // @route    GET api/todos/:id
 // @desc     Get todo by ID
