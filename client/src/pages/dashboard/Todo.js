@@ -20,7 +20,6 @@ const Todo = ({ description, setModal }) => {
   }, [getTags]);
 
   const { text, tag, tagId } = formData;
-  console.log('Todo -> formData', formData);
 
   const onChange = (e) => {
     return setFormData(
@@ -42,7 +41,9 @@ const Todo = ({ description, setModal }) => {
     description === 'Update' && updateTodo({ text, tagId, tag }, todo._id);
     setModal({ isOpen: false });
   };
-  return (
+  return loading ? (
+    <h2>Loading</h2>
+  ) : (
     <Card className="todo-form p-4">
       <Card.Body>
         <Row className="d-flex justify-content-between align-items-center mb-5">

@@ -8,7 +8,6 @@ import FlexTable from './../../atoms/FlexTable';
 import Modal from './../../atoms/Modal';
 import Button from './../../atoms/Button';
 import Pagination from './../../atoms/Pagination';
-import Spinner from './../../atoms/Spinner';
 
 const title = [
   {
@@ -37,7 +36,7 @@ const title = [
 ];
 
 const TodoList = () => {
-  const { todos, loading, getTodos, deleteTodo, getTodo, toggleCompleteTodo } = useTodo();
+  const { todos, getTodos, deleteTodo, getTodo, toggleCompleteTodo } = useTodo();
 
   const { filtered, isActive, searchTerm, setSearch } = useSearch();
   const {
@@ -69,7 +68,7 @@ const TodoList = () => {
 
   //Modal Handlers
 
-  const handleShow = (type, id) => (e) => {
+  const handleShow = (type, id) => async(e) => {
     e.preventDefault();
     if (type === 'add') {
       setModal({
@@ -79,7 +78,7 @@ const TodoList = () => {
     }
 
     if (type === 'update') {
-      getTodo(id);
+      await getTodo(id);
       setModal({
         isOpen: true,
         type: 'Update',
