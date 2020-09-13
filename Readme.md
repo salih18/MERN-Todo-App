@@ -149,7 +149,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - react-router-dom: The router components of react
 - redux react-redux: Global State Management framework
 - redux-thunk: Middleware for async calls
-- reactstrap: React integration for bootstrap css framework
+- react-bootstrap: React integration for bootstrap css framework
 - react-toastify: A library for react to have app level notification
 - axios: to make HTTP requests
 - nodejs: JS runtime for backend

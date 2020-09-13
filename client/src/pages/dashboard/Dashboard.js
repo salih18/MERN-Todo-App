@@ -7,7 +7,7 @@ import PageSize from './PageSize';
 const Dashboard = () => {
   return (
     <>
-      <div className='d-flex '>
+      <div className="d-flex ">
         <PageSize />
         <Search />
       </div>

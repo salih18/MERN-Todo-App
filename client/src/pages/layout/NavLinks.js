@@ -16,7 +16,7 @@ const NavLinks = () => {
     <Navbar.Collapse id="responsive-navbar-nav">
       {isAuthenticated && (
         <>
-          <Nav className="mr-auto"></Nav>
+          <Nav className="ml-5"></Nav>
           <Nav>
             <NavDropdown title={'Signed in: ' + user?.name} id="navbar-nav-dropdown">
               <NavDropdown.Item as={Link} to="/" onClick={() => {
@@ -29,7 +29,7 @@ const NavLinks = () => {
       )}
       {!isAuthenticated && (
         <Nav>
-          <Nav.Link as={Link} to="/login">
+          <Nav.Link className='ml-5' as={Link} to="/login">
             Login
           </Nav.Link>
         </Nav>

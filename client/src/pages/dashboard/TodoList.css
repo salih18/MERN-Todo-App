@@ -1,0 +1,51 @@
+.todo-button {
+  font-family: Open Sans, 'Helvetica', 'Arial', sans-serif;
+  padding-top: 0.30952381em;
+  padding-bottom: 0.30952381em;
+  padding-right: 1.85714286em;
+  padding-left: 1.85714286em;
+  background: #12aaeb;
+  border-radius: 0;
+  border: 1px solid #12aaeb;
+  border-width: 1px;
+  font-size: inherit;
+  line-height: 1.85714286em;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.add-todo-button {
+  position: absolute;
+  top: 20px;
+  right: 10rem;
+}
+
+.todo-button:hover,
+.todo-button:focus {
+  transform: translate3d(0, -2px, 0);
+  -webkit-transform: translate3d(0, -2px, 0);
+  background: #28b3ef !important;
+  border-radius: 0;
+  border: 1px solid #12aaeb !important;
+}
+
+.todo-button:visited {
+  background: #12aaeb !important;
+  border-color: #12aaeb !important;
+}
+
+@media all and (max-width: 992px) {
+  .add-todo-button {
+    position: absolute;
+    top: 20px;
+    right: 20%;
+    font-size: 1em;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .add-todo-button {
+    position: static;
+  }
+}

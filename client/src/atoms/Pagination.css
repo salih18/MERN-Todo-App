@@ -1,8 +1,12 @@
+.todo-list-table-pagination {
+  margin-top: 2rem;
+}
 .todo-list-table-pagination .page-link {
-  background-color: #6c757d;
-  color: white;
+  background-color: #ffffff;
+  color: #12aaeb;
   padding: 0.7rem 1.25rem;
   transition: all 0.25s ease-in;
+  font-weight: 700;
 }
 
 .todo-list-table-pagination .page-link:hover {
@@ -13,11 +17,11 @@
   background-color: #e9ecef;
   border-color: #dee2e6;
 }
-.todo-list-table-pagination .page-item.active .page-linkh {
+.todo-list-table-pagination .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #174260;
+  border-color: #174260;
 }
 
 .todo-list-table-pagination.pagination {

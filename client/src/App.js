@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //Components
 import Homepage from './pages/Homepage';
 import Navbar from './pages/layout/Navbar';
+import LatestNews from './pages/layout/LatestNews';
+
 import Routes from './pages/routing/Routes';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -29,6 +31,7 @@ function App() {
       <Router>
         <>
           <Navbar/>
+          <LatestNews/>
           <ToastContainer newestOnTop autoClose={2000} />
 
           <Switch>

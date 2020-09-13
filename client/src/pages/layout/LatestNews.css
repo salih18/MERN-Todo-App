@@ -1,0 +1,30 @@
+.latest-news {
+  background: red;
+  border-radius: 0 !important;
+  background: #174260;
+  color: #fff;
+  padding: 32px;
+}
+
+.latest-news-badge {
+  margin-right: 0.92857143em;
+  color: #fff;
+  background: #00aeb3;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  height: 26px;
+  min-width: 65px;
+  padding: 10px;
+  z-index: 3;
+  border-radius: 0;
+  margin: 0.5rem;
+}
+
+@media all and (max-width: 750px) {
+  .latest-news-text {    
+    float: left;
+    margin-top: 0.5rem;
+  }
+}

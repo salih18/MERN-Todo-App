@@ -8,6 +8,7 @@ import FlexTable from './../../atoms/FlexTable';
 import Modal from './../../atoms/Modal';
 import Button from './../../atoms/Button';
 import Pagination from './../../atoms/Pagination';
+import './TodoList.css';
 
 const title = [
   {
@@ -117,16 +118,19 @@ const TodoList = () => {
         {modal.type === 'Update' && <Todo description="Update" setModal={setModal} />}
       </Modal>
       <Button
-        variant="secondary"
         text="Add Todo"
         onClick={handleShow('add')}
         color="white"
         type="submit"
-        className="float-right mb-2"
+        className="float-right mb-2 todo-button add-todo-button"
         id="user-register-button"
       />
+
       {todos.length === 0 ? (
-        <h2 className='m-5 lead'> You don't have any todo. Click the button to add a todo! </h2>
+        <h2 className="m-5 lead">
+          {' '}
+          You don't have any todo. Click the button to add a todo!{' '}
+        </h2>
       ) : (
         <FlexTable
           data={pageOfItems}
