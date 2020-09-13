@@ -1,5 +1,7 @@
 # Todo App as a Single Page Application
 
+<img src="https://imgur.com/FJBGuEj.jpg" title="Todo App"/>
+
 The SPA with 5 pages (routes):
 
 - A Homepage to ask Signup or Signin to the application,
